@@ -213,6 +213,7 @@ def plotB(params, peptides, proteins, filename, cmapFilename, circleFilename):
         norm=norm,
         cmap=cmap
     )
+    ratios = []
     for i in range(len(aas)):
         for j in range(len(aas)):
             if i == j:
@@ -227,12 +228,15 @@ def plotB(params, peptides, proteins, filename, cmapFilename, circleFilename):
                 lw=0,
                 color=m.to_rgba(before2after[aa][0] / before2after[aa][1])
             )
+            ratios.append(before2after[aa][0] / before2after[aa][1])
             ax.add_artist(c)
     plt.xticks([i for i in range(len(aas))], [c for c in aas])
     ax.set_xlabel("Reference Amino Acid")
     plt.yticks([i for i in range(len(aas))], [c for c in aas])
     ax.set_ylabel("Alternative Amino Acid")
     plt.savefig(filename)
+
+    print("Median detection rate:", sorted(ratios)[len(ratios)//2])
 
     fig, ax = plt.subplots(1)
     matplotlib.colorbar.ColorbarBase(ax, cmap=cmap, norm=norm,
