@@ -1,0 +1,33 @@
+{
+    "Bekker-Jensen.2017": {
+        "output": {
+            "figureA": "figureA.pdf",
+            "figureB": "figureB.pdf",
+            "figureB_cmap": "figureB_cmap.pdf",
+            "figureB_circle": "figureB_circle.pdf"
+        },
+        "input": {
+            "proteomics": {
+                "peptides": {
+                    "file": "<INSERT CORRECT PATH>\\peptides.txt.gz",
+                    "experiments": [
+                        "Trypsin", "LysC", "GluC", "Chymotrypsin"
+                    ],
+                    "columns": {
+                        "sequence": "Sequence",
+                        "proteins": "Proteins",
+                        "reverse": "Reverse",
+                        "contaminant": "Potential contaminant",
+                        "mutated": "Mutated",
+                        "mutatedNames": "Mutation names"
+                    }
+                }
+            },
+            "transcriptomics": {
+                "expression": "expression.RPKM.txt.gz",
+                "variants": "variants.txt.gz",
+                "proteins": "<INSERT CORRECT PATH>\\proteins.fa.gz"
+            }
+        }
+    }
+}
