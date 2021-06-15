@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExtractSummaries>
+    <ExtractSummary>
+        <file>D:\VariantProtocol\hela\transcriptomics\raw\Caltech_HeLa-S3_cell_PE_i200_r1.bam</file>
+        <acceptedReads>43193923</acceptedReads>
+        <allReads>57543795</allReads>
+    </ExtractSummary>
+    <ExtractSummary>
+        <file>D:\VariantProtocol\hela\transcriptomics\raw\Caltech_HeLa-S3_cell_PE_i200_r2.bam</file>
+        <acceptedReads>63374017</acceptedReads>
+        <allReads>84329168</allReads>
+    </ExtractSummary>
+    <ExtractSummary>
+        <file>D:\VariantProtocol\hela\transcriptomics\raw\Caltech_HeLa-S3_cell_SE_i0_r1.bam</file>
+        <acceptedReads>9186200</acceptedReads>
+        <allReads>12919737</allReads>
+    </ExtractSummary>
+    <ExtractSummary>
+        <file>D:\VariantProtocol\hela\transcriptomics\raw\Caltech_HeLa-S3_cell_SE_i0_r2.bam</file>
+        <acceptedReads>11379103</acceptedReads>
+        <allReads>16126061</allReads>
+    </ExtractSummary>
+</ExtractSummaries>

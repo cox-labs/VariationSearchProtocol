@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CallingParams>
+    <filePaths>
+        <string>D:\VariantProtocol\hela\transcriptomics\raw\Caltech_HeLa-S3_cell_PE_i200_r1.bam</string>
+        <string>D:\VariantProtocol\hela\transcriptomics\raw\Caltech_HeLa-S3_cell_PE_i200_r2.bam</string>
+        <string>D:\VariantProtocol\hela\transcriptomics\raw\Caltech_HeLa-S3_cell_SE_i0_r1.bam</string>
+        <string>D:\VariantProtocol\hela\transcriptomics\raw\Caltech_HeLa-S3_cell_SE_i0_r2.bam</string>
+    </filePaths>
+    <genomeFasta>D:\VariantProtocol\reference\Homo_sapiens.GRCh38.104\Homo_sapiens.GRCh38.dna.primary_assembly.fa</genomeFasta>
+    <genomeAnnotation>D:\VariantProtocol\reference\Homo_sapiens.GRCh38.104\Homo_sapiens.GRCh38.104.gtf</genomeAnnotation>
+    <variantsAnnotation />
+    <tmpFolder>D:\VariantProtocol\hela\transcriptomics\results\b180f1ba\tmp</tmpFolder>
+    <finalFolder>D:\VariantProtocol\hela\transcriptomics\results\b180f1ba\final</finalFolder>
+    <numThreads>4</numThreads>
+    <minTotalDepth>10</minTotalDepth>
+    <minAltDepth>5</minAltDepth>
+    <minAltFrequency>0.15</minAltFrequency>
+    <minBaseQuality>13</minBaseQuality>
+    <minAlignmentQuality>13</minAlignmentQuality>
+    <parseAsSingleEndReads>true</parseAsSingleEndReads>
+</CallingParams>
