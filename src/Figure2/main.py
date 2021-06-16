@@ -236,7 +236,7 @@ def plotB(params, peptides, proteins, filename, cmapFilename, circleFilename):
     ax.set_ylabel("Alternative Amino Acid")
     plt.savefig(filename)
 
-    print("Median detection rate:", sorted(ratios)[len(ratios)//2])
+    print("Median detection rate:", sorted(ratios)[len(ratios) // 2])
 
     fig, ax = plt.subplots(1)
     matplotlib.colorbar.ColorbarBase(ax, cmap=cmap, norm=norm,
@@ -260,8 +260,6 @@ def plotB(params, peptides, proteins, filename, cmapFilename, circleFilename):
         )
         ax.add_artist(c)
     plt.savefig(circleFilename)
-
-
 
 
 def plot(params):
