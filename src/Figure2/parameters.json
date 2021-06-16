@@ -24,8 +24,6 @@
                 }
             },
             "transcriptomics": {
-                "expression": "expression.RPKM.txt.gz",
-                "variants": "variants.txt.gz",
                 "proteins": "<INSERT CORRECT PATH>\\proteins.fa.gz"
             }
         }
