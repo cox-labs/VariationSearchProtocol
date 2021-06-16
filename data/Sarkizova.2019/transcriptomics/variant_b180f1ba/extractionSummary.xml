@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExtractSummaries>
+    <ExtractSummary>
+        <file>D:\VariantProtocol\hla\transcriptomics\raw\A2902.bam</file>
+        <acceptedReads>77916540</acceptedReads>
+        <allReads>83252292</allReads>
+    </ExtractSummary>
+    <ExtractSummary>
+        <file>D:\VariantProtocol\hla\transcriptomics\raw\A5101.bam</file>
+        <acceptedReads>76350386</acceptedReads>
+        <allReads>81486138</allReads>
+    </ExtractSummary>
+    <ExtractSummary>
+        <file>D:\VariantProtocol\hla\transcriptomics\raw\A5401.bam</file>
+        <acceptedReads>53033292</acceptedReads>
+        <allReads>57098524</allReads>
+    </ExtractSummary>
+    <ExtractSummary>
+        <file>D:\VariantProtocol\hla\transcriptomics\raw\A5701.bam</file>
+        <acceptedReads>80035700</acceptedReads>
+        <allReads>85504656</allReads>
+    </ExtractSummary>
+</ExtractSummaries>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CallingParams>
+    <filePaths>
+        <string>D:\VariantProtocol\hla\transcriptomics\raw\A2902.bam</string>
+        <string>D:\VariantProtocol\hla\transcriptomics\raw\A5101.bam</string>
+        <string>D:\VariantProtocol\hla\transcriptomics\raw\A5401.bam</string>
+        <string>D:\VariantProtocol\hla\transcriptomics\raw\A5701.bam</string>
+    </filePaths>
+    <genomeFasta>D:\VariantProtocol\reference\Homo_sapiens.GRCh38.104\Homo_sapiens.GRCh38.dna.primary_assembly.fa</genomeFasta>
+    <genomeAnnotation>D:\VariantProtocol\reference\Homo_sapiens.GRCh38.104\Homo_sapiens.GRCh38.104.gtf</genomeAnnotation>
+    <variantsAnnotation />
+    <tmpFolder>D:\VariantProtocol\hla\transcriptomics\results\variant_b180f1ba\A2902_A5101_A5401_A5701\tmp</tmpFolder>
+    <finalFolder>D:\VariantProtocol\hla\transcriptomics\results\variant_b180f1ba\A2902_A5101_A5401_A5701\final</finalFolder>
+    <numThreads>4</numThreads>
+    <minTotalDepth>10</minTotalDepth>
+    <minAltDepth>5</minAltDepth>
+    <minAltFrequency>0.15</minAltFrequency>
+    <minBaseQuality>13</minBaseQuality>
+    <minAlignmentQuality>13</minAlignmentQuality>
+    <parseAsSingleEndReads>true</parseAsSingleEndReads>
+</CallingParams>

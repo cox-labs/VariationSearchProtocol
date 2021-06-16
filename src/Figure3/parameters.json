@@ -1,0 +1,33 @@
+{
+    "Sarkizova.2019": {
+        "output": {
+            "figureAB": "figureAB.pdf"
+        },
+        "input": {
+            "proteomics": {
+                "peptides": {
+                    "file": "<INSERT CORRECT PATH>\\peptides.txt.gz",
+                    "experiments": [
+                        "A0201", "A2402", "A3303",
+                        "B3802", "B4002", "B5601",
+                        "C0802", "C0401"
+                    ],
+                    "selectedExperiments": [
+                        "A0201", "A3303", "B3802", "B4002"
+                    ],
+                    "columns": {
+                        "sequence": "Sequence",
+                        "proteins": "Proteins",
+                        "reverse": "Reverse",
+                        "contaminant": "Potential contaminant",
+                        "mutated": "Mutated",
+                        "mutatedNames": "Mutation names"
+                    }
+                }
+            },
+            "transcriptomics": {
+                "proteins": "<INSERT CORRECT PATH>\\proteins.fa.gz"
+            }
+        }
+    }
+}
