@@ -1,0 +1,215 @@
+#where to keep resources, indexes and all resource-related data
+ref_folder: <INSERT CORRECT PATH>/resources
+lib_folder: <INSERT CORRECT PATH>/core-facility
+#where to keep intermediate files for file processing
+wrk_folder: <INSERT CORRECT PATH>
+conda_env_config: <INSERT CORRECT PATH>/env_config.yaml
+experiments:
+    Caltech_HeLa-S3_cell_PE_i200_r1:
+        organism: H_sapiens_GRCh38
+        strategy: RNA-Seq
+        layout: PE
+        instrument: ILLUMINA
+        adapter: TruSeq3-PE
+        runs:
+            SRR521490:
+            SRR521491:
+            SRR521492:
+    Caltech_HeLa-S3_cell_PE_i200_r2:
+        organism: H_sapiens_GRCh38
+        strategy: RNA-Seq
+        layout: PE
+        instrument: ILLUMINA
+        adapter: TruSeq3-PE
+        runs:
+            SRR521493:
+            SRR521494:
+            SRR521495:
+    Caltech_HeLa-S3_cell_SE_i0_r1:
+        organism: H_sapiens_GRCh38
+        strategy: RNA-Seq
+        layout: SE
+        instrument: ILLUMINA
+        adapter: TruSeq3-PE
+        runs:
+            SRR521505:
+    Caltech_HeLa-S3_cell_SE_i0_r2:
+        organism: H_sapiens_GRCh38
+        strategy: RNA-Seq
+        layout: SE
+        instrument: ILLUMINA
+        adapter: TruSeq3-PE
+        runs:
+            SRR521506:
+    A2902:
+        organism: H_sapiens_GRCh38
+        strategy: RNA-Seq
+        layout: PE
+        instrument: ILLUMINA
+        adapter: TruSeq3-PE
+        runs:
+            SRR5163127:
+    A5101:
+        organism: H_sapiens_GRCh38
+        strategy: RNA-Seq
+        layout: PE
+        instrument: ILLUMINA
+        adapter: TruSeq3-PE
+        runs:
+            SRR5163128:
+    A5401:
+        organism: H_sapiens_GRCh38
+        strategy: RNA-Seq
+        layout: PE
+        instrument: ILLUMINA
+        adapter: TruSeq3-PE
+        runs:
+            SRR5163129:
+    A5701:
+        organism: H_sapiens_GRCh38
+        strategy: RNA-Seq
+        layout: PE
+        instrument: ILLUMINA
+        adapter: TruSeq3-PE
+        runs:
+            SRR5163130:
+resources:
+    genomes:
+        H_sapiens_GRCh38:
+            fa: ftp://ftp.ensembl.org/pub/release-104/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna_rm.primary_assembly.fa.gz
+            gtf:   ftp://ftp.ensembl.org/pub/release-104/gtf/homo_sapiens/Homo_sapiens.GRCh38.104.gtf.gz
+            vcf:   ftp://ftp.ensembl.org/pub/release-104/variation/vcf/homo_sapiens/Homo_sapiens.vcf.gz
+        M_musculus_GRCm38:
+            fa: ftp://ftp.ensembl.org/pub/release-102/fasta/mus_musculus/dna/Mus_musculus.GRCm38.dna.toplevel.fa.gz
+            gtf:   ftp://ftp.ensembl.org/pub/release-102/gtf/mus_musculus/Mus_musculus.GRCm38.102.gtf.gz
+            vcf:   ftp://ftp.ensembl.org/pub/release-102/variation/vcf/mus_musculus/Mus_musculus.vcf.gz
+        D_melanogaster_BDGP6:
+            fa: ftp://ftp.ensembl.org/pub/release-90/fasta/drosophila_melanogaster/dna/Drosophila_melanogaster.BDGP6.dna.toplevel.fa.gz
+            gtf:   ftp://ftp.ensembl.org/pub/release-90/gtf/drosophila_melanogaster/Drosophila_melanogaster.BDGP6.90.gtf.gz
+            vcf:   ftp://ftp.ensembl.org/pub/release-90/variation/vcf/drosophila_melanogaster/Drosophila_melanogaster.vcf.gz
+        C_elegans_WBcel235:
+            fa: ftp://ftp.ensembl.org/pub/release-90/fasta/caenorhabditis_elegans/dna/Caenorhabditis_elegans.WBcel235.dna.toplevel.fa.gz
+            gtf:   ftp://ftp.ensembl.org/pub/release-90/gtf/caenorhabditis_elegans/Caenorhabditis_elegans.WBcel235.90.gtf.gz
+            vcf:   ""
+        S_cerevisiae.R64-1-1:
+            fa: ftp://ftp.ensembl.org/pub/release-90/fasta/saccharomyces_cerevisiae/dna/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa.gz
+            gtf:   ftp://ftp.ensembl.org/pub/release-90/gtf/saccharomyces_cerevisiae/Saccharomyces_cerevisiae.R64-1-1.90.gtf.gz
+            vcf:   ftp://ftp.ensembl.org/pub/release-90/variation/vcf/saccharomyces_cerevisiae/Saccharomyces_cerevisiae.vcf.gz
+    common:
+        adapters:
+            TruSeq2-PE:   https://raw.githubusercontent.com/timflutre/trimmomatic/master/adapters/TruSeq2-PE.fa
+            TruSeq2-SE:   https://raw.githubusercontent.com/timflutre/trimmomatic/master/adapters/TruSeq2-SE.fa
+            TruSeq3-PE-2: https://raw.githubusercontent.com/timflutre/trimmomatic/master/adapters/TruSeq3-PE-2.fa
+            TruSeq3-PE:   https://raw.githubusercontent.com/timflutre/trimmomatic/master/adapters/TruSeq3-PE.fa
+            TruSeq3-SE:   https://raw.githubusercontent.com/timflutre/trimmomatic/master/adapters/TruSeq3-SE.fa
+#defines version and parameters of tools
+tools:
+    bwa:
+        version: "0.7.17"
+        index:
+            call: "bwa index"
+            threads: 1
+        mem:
+            call: "bwa mem"
+            threads: 16
+    star:
+        version: "2.7.9a"
+        index:
+            call: "STAR --runMode genomeGenerate"
+            threads: 32
+        load:
+            call: "STAR --genomeLoad LoadAndExit"
+            threads: 1
+        align:
+            call: "STAR --runMode alignReads"
+            threads: 32
+        remove:
+            call: "STAR --genomeLoad Remove"
+            threads: 1
+    samtools:
+        version: "1.6"
+        index:
+            call: "samtools index"
+            threads: 1
+        faidx:
+            call: "samtools faidx"
+            threads: 1
+        view:
+            sam2bam:
+                call: "samtools view -bS"
+                threads: 16
+        sort:
+            call: "samtools sort"
+            threads: 16
+            by_name: "-n"
+        flagstat:
+            call: "samtools flagstat"
+        mpileup:
+            call: "samtools mpileup --ignore-RG -v -t AD,DP"
+            threads: 1
+        fixmate:
+            call: "samtools fixmate -mr"
+            threads: 1
+        merge:
+            call: "samtools merge"
+            threads: 16
+        markdup:
+            call: "samtools markdup -r"
+            threads: 1
+    fastqc:
+        version: "0.11.5"
+        call: "fastqc"
+        extract: "--extract"
+        threads: 1
+        format: "fastq"
+    sra-tools:
+        version: "2.8.2"
+        threads: 1
+        fastq-dump:
+            call: "fastq-dump --split-files"
+    trimmomatic:
+        version: "0.36"
+        call: "trimmomatic"
+        phred: "-phred33"
+        threads: 16
+        illumina_clip:
+            seed_mismatches: 2
+            palindrome_clip_threshold: 30
+            simple_clip_threshold: 10
+        leading: 3
+        trailing: 3
+        slidingwindow:
+            window_size: 4
+            required_quality: 13
+        minlen: 36
+    picard:
+        version: "2.14.1"
+        MarkDuplicates:
+            call: "picard MarkDuplicates"
+            threads: 1
+            remove_duplicates: "true"
+        CreateSequenceDictionary:
+            call: "picard CreateSequenceDictionary"
+            threads: 1
+    gatk:
+        version: "3.8"
+        RealignerTargetCreator:
+            call: "gatk -T RealignerTargetCreator"
+            threads: 16
+        IndelRealigner:
+            call: "gatk -T IndelRealigner"
+            threads: 1
+        BaseRecalibrator:
+            call: "gatk -T BaseRecalibrator"
+            threads: 1
+        PrintReads:
+            call: "gatk -T PrintReads"
+            threads: 1
+    bcftools: 
+        version: "1.6"
+        mpileup:
+            call: "bcftools mpileup --ignore-RG -a DP,AD -Ou"
+            threads: 1
+        call:
+            call: "bcftools call -mv -Ov"
+
